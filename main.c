@@ -37,14 +37,14 @@ void UART0_Write(char data) {
     UART0_DR_R = data; // Send the character
 }
 
-void LED_Init(void) {
+void LED_Init(void) 
+{
     // Enable GPIO Port F
     SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOF;   // Enable clock for Port F
 
     // Set PF1, PF2, PF3 as output
     GPIO_PORTF_DIR_R |= RED_LED | BLUE_LED | GREEN_LED;
     GPIO_PORTF_DEN_R |= RED_LED | BLUE_LED | GREEN_LED;
-
 }
 
 
